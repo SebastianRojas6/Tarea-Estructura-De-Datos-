@@ -1,6 +1,6 @@
 # Tarea Estructura De Datos
 
-Este es el repositorio oficial de la Tarea de Estructura De Datos. Aquí está el código fuente relacionado con la tarea.
+Este es el repositorio oficial de la primera tarea de Estructura de Datos. Aquí está el código relacionado con la tarea.
 
 ## Compilación
 
