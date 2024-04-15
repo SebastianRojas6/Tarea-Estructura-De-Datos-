@@ -4,21 +4,23 @@
 #include <iostream>
 #include <algorithm>
 
-Election::Election(const std::string &filename)
+using namespace std;
+
+Election::Election(const string &filename)
 {
     ballots = readFile(filename);
 }
 
 bool Election::oneRound()
 {
-    std::map<std::string, int> voteCounts;
+    map<string, int> voteCounts;
     for (const Ballot &ballot : ballots)
     {
-        std::string candidate = ballot.getCandidate();
+        string candidate = ballot.getCandidate();
         voteCounts[candidate]++;
     }
 
-    std::string top, bottom;
+    string top, bottom;
     int topCount = 0, bottomCount = ballots.size() + 1;
     for (const auto &entry : voteCounts)
     {
@@ -37,22 +39,22 @@ bool Election::oneRound()
     for (const auto &entry : voteCounts)
     {
         double percent = 100.0 * entry.second / ballots.size();
-        std::cout << entry.second << " votes for " << entry.first << " (" << percent << "%)\n";
+        cout << entry.second << " votes for " << entry.first << " (" << percent << "%)\n";
     }
 
     if (topCount == bottomCount)
     {
-        std::cout << "Election has no winner\n";
+        cout << "Election has no winner\n";
         return true;
     }
     else if (topCount > ballots.size() / 2.0)
     {
-        std::cout << "Winner is " << top << "\n";
+        cout << "Winner is " << top << "\n";
         return true;
     }
     else
     {
-        std::cout << "No winner, eliminating " << bottom << "\n";
+        cout << "No winner, eliminating " << bottom << "\n";
         eliminate(bottom);
 
         for (Ballot &ballot : ballots)
@@ -65,7 +67,7 @@ bool Election::oneRound()
 
         if (ballots.empty())
         {
-            std::cout << "All ballots are empty. No winner.\n";
+            cout << "All ballots are empty. No winner.\n";
             return true;
         }
         else
@@ -75,7 +77,7 @@ bool Election::oneRound()
     }
 }
 
-void Election::eliminate(const std::string &candidate)
+void Election::eliminate(const string &candidate)
 {
     for (Ballot &ballot : ballots)
     {
@@ -83,18 +85,18 @@ void Election::eliminate(const std::string &candidate)
     }
 }
 
-std::vector<Ballot> Election::readFile(const std::string &filename)
+vector<Ballot> Election::readFile(const string &filename)
 {
-    std::vector<Ballot> ballots;
-    std::ifstream file(filename);
-    std::string line;
+    vector<Ballot> ballots;
+    ifstream file(filename);
+    string line;
 
-    while (std::getline(file, line))
+    while (getline(file, line))
     {
-        std::istringstream iss(line);
-        std::vector<std::string> votes;
-        std::string token;
-        while (std::getline(iss, token, ','))
+        istringstream iss(line);
+        vector<string> votes;
+        string token;
+        while (getline(iss, token, ','))
         {
             votes.push_back(token);
         }

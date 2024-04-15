@@ -4,16 +4,17 @@
 #include <vector>
 #include <string>
 
+using namespace std;
 class Ballot
 {
 public:
-    Ballot(const std::vector<std::string> &names);
-    std::string getCandidate() const;
-    void eliminate(const std::string &name);
+    Ballot(const vector<string> &names);
+    string getCandidate() const;
+    void eliminate(const string &name);
     bool isEmpty() const;
 
 private:
-    std::vector<std::string> preferences;
+    vector<string> preferences;
 };
 
 #endif // BALLOT_H

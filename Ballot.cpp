@@ -1,9 +1,11 @@
 #include "Ballot.h"
 #include <algorithm>
 
-Ballot::Ballot(const std::vector<std::string> &names) : preferences(names) {}
+using namespace std;
 
-std::string Ballot::getCandidate() const
+Ballot::Ballot(const vector<string> &names) : preferences(names) {}
+
+string Ballot::getCandidate() const
 {
     if (!preferences.empty())
     {
@@ -15,9 +17,9 @@ std::string Ballot::getCandidate() const
     }
 }
 
-void Ballot::eliminate(const std::string &name)
+void Ballot::eliminate(const string &name)
 {
-    preferences.erase(std::remove(preferences.begin(), preferences.end(), name), preferences.end());
+    preferences.erase(remove(preferences.begin(), preferences.end(), name), preferences.end());
 }
 
 bool Ballot::isEmpty() const
