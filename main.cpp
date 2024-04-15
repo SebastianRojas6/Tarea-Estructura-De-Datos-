@@ -1,6 +1,7 @@
 #include "Election.h"
 #include <iostream>
 
+using namespace std;
 int main()
 {
     Election election("vote.txt");
@@ -9,9 +10,9 @@ int main()
 
     while (!done)
     {
-        std::cout << "Round #" << round << "\n";
+        cout << "Round #" << round << "\n";
         done = election.oneRound();
-        std::cout << "------------------------------\n";
+        cout << "------------------------------\n";
         round++;
     }
 

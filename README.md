@@ -11,8 +11,18 @@ g++ Ballot.cpp Election.cpp main.cpp -o tarea_eleccion
 ```
 
 ## Ejecución
+
 ```
 ./tarea_eleccion
 ```
 
 O en su defecto abrir el archivo ejecutable para dar el resultado
+
+## Integrantes
+
+_ Jhonatan Bartolo
+_ Sebastian Castillo
+_ Carlos Mendoza
+_ Oscar Monzon
+_ Sebastian Rojas
+_ Braulio Saldaña
