@@ -15,5 +15,6 @@ int main()
         round++;
     }
 
+    system("pause");
     return 0;
 }
