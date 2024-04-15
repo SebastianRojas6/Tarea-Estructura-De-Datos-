@@ -20,9 +20,9 @@ O en su defecto abrir el archivo ejecutable para dar el resultado
 
 ## Integrantes
 
-_ Jhonatan Bartolo
-_ Sebastian Castillo
-_ Carlos Mendoza
-_ Oscar Monzon
-_ Sebastian Rojas
-_ Braulio Saldaña
+- **Jhonatan Bartolo**
+- **Sebastian Castillo**
+- **Carlos Mendoza**
+- **Oscar Monzon**
+- **Sebastian Rojas**
+- **Braulio Saldaña**
